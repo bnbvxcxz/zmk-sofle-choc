@@ -10,6 +10,16 @@
         /delete-property/ zmk,backlight;
     };
 
+    /delete-node/ vbatt;
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 7>;
+        power-gpios = <&gpio0 14 (GPIO_OPEN_DRAIN | GPIO_ACTIVE_LOW)>;
+        output-ohms = <510000>;
+        full-ohms = <1510000>;
+    };
+
     mock_kscan: kscan_1 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -23,7 +33,8 @@
     transform = <&default_transform>;
 };
 
+&oled { status = "disabled"; };
+&led_strip { status = "disabled"; };
 &i2c0 { status = "disabled"; };
 &spi3 { status = "disabled"; };
 &pwm0 { status = "disabled"; };
-&left_encoder { status = "disabled"; };
