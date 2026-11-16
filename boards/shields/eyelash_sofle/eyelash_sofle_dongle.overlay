@@ -5,14 +5,13 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
-        zmk,physical-layout = &dongle_layout;
+        zmk,physical-layout = &eyeslash_sofle_layout;
         /delete-property/ zephyr,display;
         /delete-property/ zmk,underglow;
         /delete-property/ zmk,backlight;
     };
 
     /delete-node/ kscan;
-    /delete-node/ eyeslash_sofle_layout;
 
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
@@ -20,13 +19,11 @@
         rows = <0>;
         events = <0>;
     };
+};
 
-    dongle_layout: dongle_layout {
-        compatible = "zmk,physical-layout";
-        display-name = "Default";
-        kscan = <&mock_kscan>;
-        transform = <&default_transform>;
-    };
+&eyeslash_sofle_layout {
+    kscan = <&mock_kscan>;
+    transform = <&default_transform>;
 };
 
 &oled { status = "disabled"; };
