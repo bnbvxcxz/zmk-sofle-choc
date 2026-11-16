@@ -1,6 +1,6 @@
 include:
   # 1. Central Dongle (Seeed XIAO nRF52840)
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: eyelash_sofle_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
@@ -13,8 +13,8 @@ include:
   - board: eyelash_nano
     shield: eyelash_sofle_right nice_oled
 
-  # 4. Settings Reset (For both board types)
+  # 4. Settings Reset
   - board: eyelash_nano
     shield: settings_reset
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
