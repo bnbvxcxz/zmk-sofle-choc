@@ -19,6 +19,14 @@
     };
 };
 
+&oled {
+    status = "disabled";
+};
+
+&led_strip {
+    status = "disabled";
+};
+
 &spi3 {
     status = "disabled";
 };
