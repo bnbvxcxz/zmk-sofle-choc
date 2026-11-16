@@ -19,6 +19,10 @@
     };
 };
 
+&eyeslash_sofle_layout {
+    kscan = <&mock_kscan>;
+};
+
 &oled {
     status = "disabled";
 };
