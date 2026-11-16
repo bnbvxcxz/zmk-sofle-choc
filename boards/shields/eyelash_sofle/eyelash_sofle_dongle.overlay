@@ -1,35 +1,17 @@
-#include <dt-bindings/zmk/matrix_transform.h>
 #include "eyelash_sofle.dtsi"
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
-        zmk,physical-layout = &eyeslash_sofle_layout;
         /delete-property/ zephyr,display;
         /delete-property/ zmk,underglow;
         /delete-property/ zmk,backlight;
     };
 
-    /delete-node/ kscan;
-
-    mock_kscan: mock_kscan_0 {
+    mock_kscan: kscan_1 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
         events = <0>;
     };
 };
-
-&eyeslash_sofle_layout {
-    kscan = <&mock_kscan>;
-    transform = <&default_transform>;
-};
-
-&oled { status = "disabled"; };
-&backlight { status = "disabled"; };
-&led_strip { status = "disabled"; };
-&spi3 { status = "disabled"; };
-&pwm0 { status = "disabled"; };
-&i2c0 { status = "disabled"; };
-&left_encoder { status = "disabled"; };
