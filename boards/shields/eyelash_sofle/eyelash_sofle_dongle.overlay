@@ -2,7 +2,7 @@
 
 / {
     chosen {
-        zmk,kscan = &mock_kscan;
+        zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
         zmk,physical-layout = &eyeslash_sofle_layout;
         /delete-property/ zephyr,display;
@@ -19,17 +19,19 @@
         output-ohms = <510000>;
         full-ohms = <1510000>;
     };
+};
 
-    mock_kscan: kscan_1 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
+&kscan0 {
+    compatible = "zmk,kscan-mock";
+    /delete-property/ wakeup-source;
+    /delete-property/ diode-direction;
+    columns = <0>;
+    rows = <0>;
+    events = <0>;
 };
 
 &eyeslash_sofle_layout {
-    kscan = <&mock_kscan>;
+    kscan = <&kscan0>;
     transform = <&default_transform>;
 };
 
