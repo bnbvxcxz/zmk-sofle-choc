@@ -86,7 +86,7 @@
 &trans            &trans            &trans          &trans           &trans           &trans             &mmv MOVE_RIGHT  &kp MINUS        &kp EQUAL        &rgb_ug RGB_SPD &rgb_ug RGB_SPI &rgb_ug RGB_EFF &kp PRINTSCREEN
 &tog 2            &kp C_BRI_DN      &kp C_BRI_UP    &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &rgb_ug RGB_BRD &rgb_ug RGB_BRI
             >;
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&scroll_encoder &rsr_trans>;
         };
 
         layer_2 {
