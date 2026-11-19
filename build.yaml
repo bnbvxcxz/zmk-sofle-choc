@@ -1,20 +1,14 @@
 include:
-  # 1. Central Dongle (Seeed XIAO nRF52840)
-  - board: xiao_ble//zmk
-    shield: eyelash_sofle_dongle
+  # 1. Left Half (Central)
+  - board: nice_nano@2.0.0//zmk
+    shield: sofle_left
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
 
-  # 2. Left Half
-  - board: eyelash_nano
-    shield: eyelash_sofle_left nice_oled
+  # 2. Right Half (Peripheral)
+  - board: nice_nano@2.0.0//zmk
+    shield: sofle_right
 
-  # 3. Right Half
-  - board: eyelash_nano
-    shield: eyelash_sofle_right nice_oled
-
-  # 4. Settings Reset
-  - board: eyelash_nano
-    shield: settings_reset
-  - board: xiao_ble//zmk
+  # 3. Settings Reset
+  - board: nice_nano@2.0.0//zmk
     shield: settings_reset
